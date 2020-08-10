@@ -13,7 +13,7 @@ export class AppComponent {
   title = 'orbit-report';
 
 constructor() {
-  this.sourceList = []
+  this.sourceList = [];
   this.displayList = [];
   let satellitesUrl = 'https://handlers.education.launchcode.org/static/satellites.json';
 
@@ -40,10 +40,10 @@ constructor() {
 
 }
   search(searchTerm: string): void {
-    const matchingSatellites: Satellite[] = [];
+    let matchingSatellites: Satellite[] = [];
     searchTerm = searchTerm.toLowerCase();
-    for (let i = 0; i < this.sourceList.length; i++) {
-      const name = this.sourceList[i].name.toLowerCase();
+    for (let i=0; i < this.sourceList.length; i++) {
+      let name = this.sourceList[i].name.toLowerCase();
       if (name.indexOf(searchTerm) >= 0) {
         matchingSatellites.push(this.sourceList[i]);
 
