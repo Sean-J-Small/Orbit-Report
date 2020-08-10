@@ -7,7 +7,6 @@ import { Satellite } from './satellite';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // displayList: Satellite[];
   sourceList: Satellite[];
   displayList: Satellite[];
   title = 'orbit-report';
@@ -32,7 +31,7 @@ constructor() {
 
         let satelliteObject = new Satellite(fetchedSatellites.name, fetchedSatellites.type, fetchedSatellites.launchDate, fetchedSatellites.orbitType, fetchedSatellites.operational);
         
-        this.sourceList.push(satelliteObject);
+        this.displayList = this.sourceList.slice(0);
      
       }.bind(this));
   }.bind(this));
